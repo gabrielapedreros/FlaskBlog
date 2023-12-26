@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="content-section">
+    <fieldset class="form-group">
+        <!-- display profile information-->
+        <legend class="border-bottom mb-4">Account Info</legend>
+        <div class="form-group">
+            <label class="form-control-label">Username</label>
+            <p class="form-control-static">{{ current_user.username }}</p>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label">Email</label>
+            <p class="form-control-static">{{ current_user.email }}</p>
+        </div>
+    </fieldset>
+</div>
+{% endblock content %}
