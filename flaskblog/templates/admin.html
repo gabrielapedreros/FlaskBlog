@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <h1>Admin Dashboard</h1>
+
+    <h2>News Items</h2>
+    <div class="news-items">
+        {% for news_item in news_items %}
+        <!-- display all hacker news posts -->
+            <div class="news-item">
+                <h3>{{ news_item.title }}</h3>
+                <!-- display likes/dislikes of posts -->
+                <p>Liked/Disliked by:</p>
+                <ul>
+                    {% for interaction in user_interactions.get(news_item.id, []) %}
+                        <li>{{ interaction.user.username }}: {% if interaction.like %}Liked{% else %}Disliked{% endif %}</li>
+                    {% else %}
+                        <li>No interactions for this item.</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% else %}
+            <p>No news items available.</p>
+        {% endfor %}
+    </div>
+
+    <h2>Manage Users</h2>
+    <div class="users">
+        <!-- display users -->
+        {% for user in users %}
+            <div class="user">
+                <h3>{{ user.username }}</h3>
+                <!-- allow the admin to delete a user -->
+                <form action="{{ url_for('delete_user', user_id=user.id) }}" method="post">
+                    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                    <input type="submit" value="Delete User" class="btn btn-danger">
+                </form>
+            </div>
+        {% else %}
+            <p>No users available.</p>
+        {% endfor %}
+    </div>
+{% endblock %}
