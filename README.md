@@ -36,6 +36,9 @@ The domain name 'www.gphackernews.me' was bought by on Namecheap.com. Certbot pr
 the instructions that would eventually allow my domain to be secured. The domain was connected
 to the server and then before you know it, the web application is hosted on the web.
 
+# Unit Pipeline and CI/CD
+In this project, the CI/CD environment I used was Gitlab. The code is tested to ensure efficiency of the flask project.
+ 
 # Unit Test Coverage
 Name                      Stmts   Miss  Cover
 ---------------------------------------------
@@ -49,5 +52,4 @@ tests/test_models.py         34      0   100%
 tests/test_routes.py         20      0   100%
 ---------------------------------------------
 TOTAL                       241     64    73%
-
-# Unit test, pipeline, CD/CI, 
+This demonstrates the total amount of units in the source code tested.
