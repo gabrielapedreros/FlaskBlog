@@ -1,14 +1,10 @@
 """ Testing model file """
-import pytest
-# pytest is a testing framework 
-from flaskblog import app, db
-# import Flask application instance 
-# import database instance from Flask app
-from flaskblog.models import NewsItem, User, NewsItemLike
-# import the users
+import pytest # pytest is a testing framework 
+from flaskblog import app, db # import Flask application instance, import database instance from Flask app
+from flaskblog.models import NewsItem, User, NewsItemLike # import the users
 
-""" This fixture function is ran before the test functions, where test_app is set up once before the first test
- and torn down after last test, as described by scope='module' """
+""" This fixture function is ran before the test functions, where test_app is set up once before the first 
+test and torn down after last test, as described by scope='module' """
 @pytest.fixture(scope='module')
 def test_app():
     app.config['TESTING'] = True
