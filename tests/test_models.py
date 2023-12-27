@@ -5,7 +5,7 @@ from flaskblog import app, db
 # import Flask application instance 
 # import database instance from Flask app
 from flaskblog.models import NewsItem, User, NewsItemLike
-# import the users
+# import the models defined in model.py
 
 @pytest.fixture(scope='module')
 def test_app():
