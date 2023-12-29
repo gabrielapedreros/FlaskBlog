@@ -1,17 +1,21 @@
 <!-- Gabriela Pedreros -gp21j -->
 {% extends 'layout.html' %}
+<!-- Inherit all content from layout.html -->
 {% block content %}
-    <h1>Admin Dashboard</h1>
 
+    <!-- Overwrite content from layout.html -->
+    <h1>Admin Dashboard</h1>
     <h2>News Items</h2>
+    <!-- display all news items and list which users have interacted with the news items -->
     <div class="news-items">
+    <!-- container for news items -->
         {% for news_item in news_items %}
         <!-- display all hacker news posts -->
             <div class="news-item">
                 <h3>{{ news_item.title }}</h3>
                 <!-- display likes/dislikes of posts -->
                 <p>Liked/Disliked by:</p>
-                <ul>
+                <ul> <!-- unordered list of news items -->
                     {% for interaction in user_interactions.get(news_item.id, []) %}
                         <li>{{ interaction.user.username }}: {% if interaction.like %}Liked{% else %}Disliked{% endif %}</li>
                     {% else %}
@@ -25,9 +29,11 @@
     </div>
 
     <h2>Manage Users</h2>
+    <!-- give users, who are also admins, the ability to delete users -->
     <div class="users">
-        <!-- display users -->
+    <!-- container for users -->
         {% for user in users %}
+        <!-- display users -->
             <div class="user">
                 <h3>{{ user.username }}</h3>
                 <!-- allow the admin to delete a user -->
@@ -35,6 +41,7 @@
                     <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                     <input type="submit" value="Delete User" class="btn btn-danger">
                 </form>
+                <!-- the deleted user will not show up anymore under the news item it interacted with -->
             </div>
         {% else %}
             <p>No users available.</p>
