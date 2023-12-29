@@ -7,7 +7,7 @@ body {
     margin-top: 5rem;    /* top page spacing */
   }
   
-  h1, h2, h3, h4, h5, h6 {
+  h1, h2, h3, h4 {
     color: #444444;    /* sets heading elements to dark grey */
   }
   
@@ -48,12 +48,6 @@ body {
     white-space: pre-line;
   }
   
-  .article-img {
-    height: 65px;
-    width: 65px;
-    margin-right: 16px;
-  }
-  
   .article-metadata {
     padding-bottom: 1px;
     margin-bottom: 4px;
@@ -71,13 +65,3 @@ body {
     vertical-align: middle;
   }
   
-  .account-img {
-    height: 125px;
-    width: 125px;
-    margin-right: 20px;
-    margin-bottom: 16px;
-  }
-  
-  .account-heading {
-    font-size: 2.5rem;
-  }
