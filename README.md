@@ -1,3 +1,8 @@
+# Flask Blog Problem
+Develop a Python web application development. Create a web application that displays news from Hacker News portal. The project should feature Sign Up/Login, NewsFeed, Profile, and Admin pages. Every news item on the news page will include a Like and Dislike button. Users have the option to like or dislike a news item. The most popular items are displays at the top of the news feed. The Auth0 platorm should validate each user's identity. 
+Use the Hacker News API for getting the news. 
+Use the Flask Tutorial: https://www.youtube.com/watch?v=MwZwr5Tvyxo&list=PL-osiE80TeTs4UjLw5MM6OjgkjFeUxCYH
+
 # Flask Blog
 I used the Linode service to create a server that would at first run this 
 application locally (using the IP address of the server). Eventually, when incorporating
