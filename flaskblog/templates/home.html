@@ -1,8 +1,13 @@
 <!-- Gabriela Pedreros -gp21j -->
 {% extends "layout.html" %}
+<!-- Inherit all content from layout.html -->
 {% block content %}
+
+    <!-- Overwrite content from layout.html -->
     <h1>Top News from Hacker News</h1>
     <div class="list-group">
+    <!-- container for news items -->
+        
         {% for item in news_items %}
             <div class="list-group-item list-group-item-action flex-column align-items-start d-flex justify-content-between">
                 <!-- display news items -->
@@ -13,9 +18,10 @@
                     <small>{{ item.time | datetimeformat }}</small>
                     <p class="mb-1">By: {{ item.by }}</p>
                 </div>
+                
                 <!-- like/dislike button & counts -->
                 <div class="d-flex align-items-center">
-                    <!-- like button and dislike button -->
+                    <!-- like button and dislike buttons -->
                     <form action="{{ url_for('like_news_item', news_item_id=item.id) }}" method="post" class="mr-2">
                         {{ like_forms[item.id].hidden_tag() }}
                         <button type="submit" class="btn btn-outline-primary btn-sm">Like</button>
