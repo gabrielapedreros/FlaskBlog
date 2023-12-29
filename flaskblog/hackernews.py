@@ -1,3 +1,4 @@
+# Gabriela Pedreros - gp21j
 """Hackernews: This will request information from the hackernews portal """
 import requests
 #make http requests
