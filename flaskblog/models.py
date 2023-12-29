@@ -1,3 +1,4 @@
+# Gabriela Pedreros - gp21j
 """Models imports and libraries"""
 from flask_login import UserMixin
 #check if user is authenticated
