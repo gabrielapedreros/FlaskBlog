@@ -1,3 +1,4 @@
+# Gabriela Pedreros - gp21j
 """ Testing model file """
 import pytest 
 # pytest is a testing framework 
