@@ -1,3 +1,4 @@
+# Gabriela Pedreros - gp21j
 """Runs application from flaskblog"""
 from flaskblog import app
 
