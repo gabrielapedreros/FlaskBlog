@@ -1,12 +1,10 @@
 # Gabriela Pedreros - gp21j
-"""Forms: Handles users who are liking/disliking a post"""
-from flask_wtf import FlaskForm
-#define web forms as a python class
-from wtforms import SubmitField
-#validates forms
+""" Define forms for Flask web app using Flask WTF and WTForms, which handle user interactions """
+from flask_wtf import FlaskForm    #define web forms to handle form submissions
+from wtforms import SubmitField    #define button for submissions
 class LikeForm(FlaskForm):
-    """If post liked"""
+    """ If news post is liked by user, use this form """
     submit = SubmitField('Like')
 class DislikeForm(FlaskForm):
-    """if post disliked"""
+    """ If news post is disliked by user, use this form """
     submit = SubmitField('Dislike')
