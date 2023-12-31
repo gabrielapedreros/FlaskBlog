@@ -1,12 +1,11 @@
 # Gabriela Pedreros - gp21j
-""" Testing model file """
-import pytest 
-# pytest is a testing framework 
-from flaskblog import app, db
-# import Flask application instance 
-# import database instance from Flask app
-from flaskblog.models import NewsItem, User, NewsItemLike
-# import the models defined in model.py
+""" This file tests the models database in the Flask app using pytest.
+    It tests the initialization and interaction of the User, NewsItem, and NewsItemLike
+    models. The test ensure the models correctly use the database and behave accordingly. """
+import pytest                    # pytest is a testing framework 
+from flaskblog import app, db    # import Flask application instance 
+                                # import database instance from Flask app
+from flaskblog.models import NewsItem, User, NewsItemLike    # import the models defined in model.py
 
 @pytest.fixture(scope='module')
 def test_app():
