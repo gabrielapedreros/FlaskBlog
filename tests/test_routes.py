@@ -1,12 +1,10 @@
 # Gabriela Pedreros - gp21j
-""" Testing routes file """
-import pytest
-# pytest is a testing framework 
-from flaskblog import app, db
-# import Flask application instance 
-# import database instance from Flask app
-from flaskblog.models import User
-# import the users model
+""" This file tests the routes in the Flask app using pytest. It tests the web page in response to the client requests,
+    and functionality of routes of the home and about page in the Flask app. """
+import pytest                                # pytest is a testing framework 
+from flaskblog import app, db                # import Flask application instance 
+                                            # import database instance from Flask app
+from flaskblog.models import User            # import the users model
 
 @pytest.fixture(scope='module')
 def test_client():
