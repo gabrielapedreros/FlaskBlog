@@ -1,19 +1,14 @@
 # Gabriela Pedreros - gp21j
-"""Hackernews: This will request information from the hackernews portal """
-import requests
-#make http requests
-from flaskblog.models import NewsItem
-#use NewItem from models file
-from flaskblog import db
-#use database
+""" This file will request information from the Hacker news portal and store it in the database. """
+import requests                        #make http requests
+from flaskblog.models import NewsItem  #use NewItem from models database
+from flaskblog import db                #use database
 def fetch_hackernews_top_stories():
-    """fetch data from hacker news"""
+    """ fetch data from hacker news by performing http get request to Hacker News API endpoint """
     response = requests.get("https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty")
-    top_story_ids = response.json()[:30]  
-#fetch 30 stories
+    top_story_ids = response.json()[:30]  #fetch 30 stories & convert from JSON to list/dict 
     for story_id in top_story_ids:
-        # check if the story exists
-        if NewsItem.query.get(story_id) is not None:
+        if NewsItem.query.get(story_id) is not None:    # check if the story exists
             continue
         story_response = requests.get(f"https://hacker-news.firebaseio.com/v0/item/{story_id}.json?print=pretty")
         story_data = story_response.json()
@@ -31,5 +26,4 @@ def fetch_hackernews_top_stories():
             url=story_data.get('url', '')
         )
         db.session.add(news_item)
-    db.session.commit()
-#commit to db
+    db.session.commit()    #commit to db
